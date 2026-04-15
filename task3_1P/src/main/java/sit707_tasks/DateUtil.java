@@ -1,18 +1,18 @@
 package sit707_tasks;
 
 /**
- * @author Aswin
+ * @author Aswin Soman
  */
 public class DateUtil {
 
 	// Months in order 0-11 maps to January-December.
 	private static String[] MONTHS = new String[] {
-			"January", "February", "March", "April", "May", "June", 
+			"January", "February", "March", "April", "May", "June",
 			"July", "August", "September", "October", "November", "December"
 	};
-	
+
 	private int day, month, year;
-	
+
 	/*
 	 * Constructs object from given day, month and year.
 	 */
@@ -42,7 +42,7 @@ public class DateUtil {
 	public int getYear() {
 		return year;
 	}
-	
+
 	/**
 	 * Increment one day.
 	 */
@@ -61,7 +61,7 @@ public class DateUtil {
 			year++;
 		}
 	}
-	
+
 	/**
 	 * Decrement one day from current date.
 	 */
@@ -77,33 +77,56 @@ public class DateUtil {
 			day = monthDuration(month, year);
 		}
 	}
-	
+
 	/**
 	 * Calculate duration of current month of year.
 	 * @param month
 	 * @param year
 	 * @return
 	 */
-	public static int monthDuration(int month, int year) {		
+	public static int monthDuration(int month, int year) {
 		if (month == 2 && year % 4 == 0) {
 			// February leap year?
-			return 29;			
-		} else if (month == 2) {  
+			return 29;
+		} else if (month == 2) {
 			// normal 28 days February
 			return 28;
-			
+
 		} else if (month == 4 || month == 6 || month == 9 || month == 11) {
 			// 30 days' months
-			return 30;			
+			return 30;
 		}
 		return 31;  // rest are 31 days' months.
 	}
-	
+
 	/**
 	 * User friendly output.
 	 */
 	public String toString() {
 		return day + " " + MONTHS[month - 1] + " " + year;
 	}
-	
+
+	/**
+	 * Checks equality based on day, month and year values.
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		DateUtil other = (DateUtil) obj;
+		return this.day == other.day &&
+			   this.month == other.month &&
+			   this.year == other.year;
+	}
+
+	/**
+	 * Hash code consistent with equals.
+	 */
+	@Override
+	public int hashCode() {
+		int result = day;
+		result = 31 * result + month;
+		result = 31 * result + year;
+		return result;
+	}
 }
