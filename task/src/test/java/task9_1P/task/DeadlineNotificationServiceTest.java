@@ -139,7 +139,6 @@ public class DeadlineNotificationServiceTest {
         assertEquals("T1", overdue.get(0).getTaskId());
     }
 
-    // ========== TDD ITERATION 4: Days Until Deadline ==========
 
     @Test
     public void testIteration4_daysUntilDeadline() {
