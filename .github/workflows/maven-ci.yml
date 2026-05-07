@@ -22,8 +22,8 @@ jobs:
 
     - name: Build with Maven
       run: mvn clean install
-      working-directory: task9_1P
+      working-directory: task
 
     - name: Run tests
       run: mvn test
-      working-directory: task9_1P
+      working-directory: task
