@@ -100,7 +100,6 @@ public class DeadlineNotificationServiceTest {
         service.addTask(null);
     }
 
-    // ========== TDD ITERATION 3: Overdue Detection ==========
 
     @Test
     public void testIteration3_taskIsOverdue() {
