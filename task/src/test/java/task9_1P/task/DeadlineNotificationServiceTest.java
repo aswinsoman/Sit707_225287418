@@ -8,16 +8,6 @@ import org.junit.Test;
 import java.time.LocalDate;
 import java.util.List;
 
-/**
- * Test-Driven Development (TDD) tests for the Task Deadline & Notification feature.
- *
- * These tests were written BEFORE the production code, following the TDD cycle:
- *   Red   -> Write a failing test
- *   Green -> Write minimal code to pass the test
- *   Refactor -> Clean up while keeping tests green
- *
- * Each test method is numbered to show the TDD iteration order.
- */
 public class DeadlineNotificationServiceTest {
 
     private DeadlineNotificationService service;
