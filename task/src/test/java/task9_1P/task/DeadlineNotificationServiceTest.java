@@ -47,7 +47,6 @@ public class DeadlineNotificationServiceTest {
     @Test
     public void testIteration1_taskDefaultStatus() {
         // Red: No status field yet
-        // Green: Add status field defaulting to NOT_STARTED
         Task task = new Task("T1", "5.1P", STUDENT_ID, LocalDate.of(2026, 5, 14));
         assertEquals(Task.Status.NOT_STARTED, task.getStatus());
     }
